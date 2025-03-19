@@ -33,8 +33,8 @@ public class UserService {
     }
 
     // 회원 정보 수정!
-    public User updateUser(Long id, Dto userDTO) {
-        return userRepository.findById(id).map(user -> {
+    public User updateUser(Dto userDTO) {
+        return userRepository.findById(userDTO.getId()).map(user -> {
             user.setName(userDTO.getName());
             user.setEmail(userDTO.getEmail());
             user.setPassword(userDTO.getPassword());

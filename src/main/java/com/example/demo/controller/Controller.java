@@ -47,8 +47,8 @@ public class Controller {
 
     // 회원 정보 수정!
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody Dto userDTO) {
-        userService.updateUser(id, userDTO);
+    public ResponseEntity<String> updateUser(@RequestBody Dto userDTO) {
+        userService.updateUser(userDTO);
         return ResponseEntity.ok("회원 수정 성공!");
     }
 
